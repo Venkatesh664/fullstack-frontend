@@ -1,0 +1,14 @@
+FROM node:18-alpine AS build
+
+# Set working directory
+WORKDIR /app
+
+# Copy source files
+COPY . .
+
+# Install dependencies
+RUN npm install
+
+# Build the production-ready app
+RUN npm run build
+
